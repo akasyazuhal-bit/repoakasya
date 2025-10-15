@@ -1,0 +1,170 @@
+---
+alwaysApply: true
+---
+
+# Terminal Çıktı Analiz Sistemi
+
+## 🎯 Amaç
+Her terminal komut çalıştırmasından sonra çıktıyı otomatik olarak analiz etmek, sorunları tespit etmek ve düzeltme önerileri sunmak.
+
+## 🔄 Analiz Süreci
+
+### 1. Otomatik Çıktı Analizi
+Her `run_terminal_cmd` çağrısından sonra:
+
+```python
+# Otomatik analiz tetikleyicisi
+if command_executed:
+    analyze_terminal_output(output, command, context)
+```
+
+### 2. Clear Thought Entegrasyonu
+```python
+def analyze_terminal_output(output, command, context):
+    # Clear thought ile analiz
+    analysis = mcp_Clear_Thought_1_5_clear_thought(
+        operation="debugging_approach",
+        prompt=f"Terminal çıktısını analiz et: {output}",
+        context=f"Komut: {command}, Bağlam: {context}"
+    )
+    
+    # Sorun tespiti
+    issues = detect_issues(analysis)
+    
+    # Düzeltme önerileri
+    if issues:
+        suggest_fixes(issues, command, context)
+```
+
+## 🔍 Sorun Tespiti Kriterleri
+
+### A. Hata Seviyeleri
+1. **CRITICAL** (🔴): Exit code != 0, fatal errors
+2. **WARNING** (🟡): Warnings, deprecated messages
+3. **INFO** (🔵): Informational messages
+4. **SUCCESS** (🟢): Successful operations
+
+### B. Tespit Edilecek Sorunlar
+- **Exit Code Hataları**: Non-zero exit codes
+- **Permission Hataları**: Access denied, permission errors
+- **Dependency Hataları**: Missing packages, version conflicts
+- **Path Hataları**: File not found, directory issues
+- **Syntax Hataları**: Command syntax errors
+- **Resource Hataları**: Memory, disk space issues
+- **Network Hataları**: Connection timeouts, DNS issues
+
+## 🛠️ Düzeltme Önerileri
+
+### Otomatik Düzeltmeler
+```python
+def suggest_fixes(issues, command, context):
+    for issue in issues:
+        if issue.type == "missing_package":
+            suggest_install_command(issue.package)
+        elif issue.type == "permission_error":
+            suggest_chmod_or_sudo(issue.path)
+        elif issue.type == "path_not_found":
+            suggest_path_correction(issue.path)
+```
+
+### Öneri Kategorileri
+1. **Package Management**: pip install, npm install, etc.
+2. **Permission Fixes**: chmod, sudo, ownership changes
+3. **Path Corrections**: cd, mkdir, file path fixes
+4. **Configuration**: Environment variables, config files
+5. **Dependency Resolution**: Version conflicts, compatibility
+
+## 📊 Analiz Raporu
+
+### Rapor Formatı
+```
+🔍 TERMINAL ÇIKTI ANALİZİ
+═══════════════════════════════════════
+
+📋 Komut: {command}
+⏱️  Süre: {execution_time}
+📊 Exit Code: {exit_code}
+
+🔍 TESPİT EDİLEN SORUNLAR:
+{issues_list}
+
+💡 ÖNERİLEN DÜZELTMELER:
+{suggestions_list}
+
+🎯 SONRAKI ADIMLAR:
+{next_steps}
+```
+
+## 🚀 Kullanım Örnekleri
+
+### Örnek 1: Package Installation
+```bash
+pip install pandas
+# Çıktı: ERROR: Could not find a version that satisfies the requirement pandas
+```
+**Analiz**: Missing package error detected
+**Öneri**: `pip install --upgrade pip && pip install pandas`
+
+### Örnek 2: Permission Error
+```bash
+chmod +x script.sh
+# Çıktı: chmod: cannot access 'script.sh': No such file or directory
+```
+**Analiz**: File not found error
+**Öneri**: Check file path, create file if needed
+
+### Örnek 3: Git Operations
+```bash
+git push origin main
+# Çıktı: fatal: The current branch main has no upstream branch
+```
+**Analiz**: Git upstream not set
+**Öneri**: `git push --set-upstream origin main`
+
+## 🔧 Entegrasyon
+
+### Cursor Rules Entegrasyonu
+```yaml
+terminal_analysis:
+  enabled: true
+  auto_analyze: true
+  clear_thought_integration: true
+  report_format: "detailed"
+  suggestions: "automatic"
+```
+
+### Otomatik Tetikleme
+```python
+# Her terminal komutundan sonra otomatik çalışır
+@terminal_analysis_trigger
+def run_terminal_cmd(command, **kwargs):
+    result = execute_command(command)
+    analyze_output(result, command)
+    return result
+```
+
+## 📈 Gelişmiş Özellikler
+
+### 1. Öğrenme Sistemi
+- Başarılı komutları öğrenir
+- Hata pattern'lerini kaydeder
+- Kullanıcı tercihlerini adapte eder
+
+### 2. Bağlam Analizi
+- Proje tipine göre öneriler
+- Önceki komutlarla ilişki
+- Dosya sistemi durumu
+
+### 3. Predictive Analysis
+- Potansiyel sorunları önceden tespit
+- Proaktif öneriler
+- Risk değerlendirmesi
+
+## 🎯 Sonuç
+
+Bu sistem sayesinde:
+- ✅ Her terminal çıktısı otomatik analiz edilir
+- ✅ Sorunlar anında tespit edilir
+- ✅ Düzeltme önerileri sunulur
+- ✅ Clear thought ile derinlemesine analiz
+- ✅ Kullanıcı deneyimi iyileştirilir
