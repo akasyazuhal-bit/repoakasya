@@ -23,7 +23,13 @@ jobs:
       run: pip install ruff
       
     - name: Run Ruff check
-      run: ruff check .
+      run: ruff check . --output-format=github
       
     - name: Run Ruff format check
-      run: ruff format --check .
+      run: ruff format --check . --diff
+      
+    - name: Comment on PR (if applicable)
+      if: failure() && github.event_name == 'pull_request'
+      run: |
+        echo "❌ Ruff kontrolü başarısız oldu!"
+        echo "Lütfen kod kalitesi sorunlarını düzeltin."
