@@ -1,0 +1,27 @@
+---
+alwaysApply: true
+---
+Plan mode kurallar ;
+
+* Temel planlama için:
+
+1. sequential_thinking
+Ne zaman: Adım adım planlama yaparken
+Örnek: Proje geliştirme, iş akışı tasarımı
+Avantaj: Mantıklı sıralama ve bağımlılıkları gösterir
+2. decision_framework
+Ne zaman: Farklı seçenekler arasında karar verirken
+Örnek: Teknoloji seçimi, mimari kararları
+Avantaj: Kriterleri ve seçenekleri sistematik olarak değerlendirir
+
+* Gelişmiş Planlama için:
+
+3. tree_of_thought - Karmaşık Problemler
+Ne zaman: Çok dallı, karmaşık planlama
+Örnek: Büyük sistem tasarımı, çoklu senaryo planlaması
+Avantaj: Farklı yolları paralel olarak keşfeder
+4. systems_thinking - Sistem Tasarımı
+Ne zaman: Bütünsel sistem planlaması
+Örnek: Kurumsal mimari, süreç tasarımı
+Avantaj: Parçalar arası ilişkileri ve etkileşimleri gösterir
+

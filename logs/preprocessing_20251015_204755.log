@@ -1,0 +1,60 @@
+2025-10-15 20:47:55,822 - BitcoinDataPreprocessing - INFO - ============================================================
+2025-10-15 20:47:55,822 - BitcoinDataPreprocessing - INFO - BITCOIN DATA PREPROCESSING PIPELINE
+2025-10-15 20:47:55,822 - BitcoinDataPreprocessing - INFO - ============================================================
+2025-10-15 20:47:55,822 - BitcoinDataPreprocessing - INFO - Giriş dosyası: data/raw/dataraw.csv
+2025-10-15 20:47:55,822 - BitcoinDataPreprocessing - INFO - Çıkış dosyası: data/processed/cleaned_data_fixed.csv
+2025-10-15 20:47:55,822 - BitcoinDataPreprocessing - INFO - Konfigürasyon: {
+  "log_level": "INFO",
+  "outlier_handling": {
+    "method": "cap",
+    "z_score_threshold": 3.0,
+    "iqr_multiplier": 1.5
+  },
+  "missing_value_imputation": {
+    "method": "forward_fill"
+  },
+  "data_smoothing": {
+    "method": "moving_average",
+    "window": 5
+  },
+  "scaling": {
+    "method": "robust"
+  },
+  "transformation": {
+    "method": "log"
+  },
+  "differencing": {
+    "order": 1
+  },
+  "technical_indicators": {
+    "windows": [
+      5,
+      10,
+      20
+    ]
+  },
+  "lag_features": {
+    "lags": [
+      1,
+      2,
+      3,
+      5,
+      10
+    ]
+  },
+  "validation": {
+    "max_missing_pct": 5.0,
+    "price_change_limit_pct": 20.0
+  },
+  "statistical_analysis": {
+    "normality_alpha": 0.05,
+    "stationarity_alpha": 0.05
+  }
+}
+2025-10-15 20:47:55,822 - BitcoinDataPreprocessing - INFO - ============================================================
+2025-10-15 20:47:55,823 - BitcoinDataPreprocessing - INFO - Bileşen durumları: {'data_loader': 'READY', 'validator': 'READY', 'outlier_detector': 'READY', 'statistical_analyzer': 'READY', 'transformer': 'READY', 'cleaner': 'READY'}
+2025-10-15 20:47:55,823 - BitcoinDataPreprocessing - INFO - Pipeline başlatılıyor...
+2025-10-15 20:47:56,058 - BitcoinDataPreprocessing - INFO - Pipeline başarıyla tamamlandı: 0.24 saniye
+2025-10-15 20:47:56,058 - BitcoinDataPreprocessing - INFO - Sonuç veri boyutu: (180, 10)
+2025-10-15 20:47:56,070 - BitcoinDataPreprocessing - INFO - Pipeline raporu kaydedildi: data\processed\cleaned_data_fixed_pipeline_report.json
+2025-10-15 20:47:56,070 - BitcoinDataPreprocessing - INFO - Pipeline başarıyla tamamlandı!

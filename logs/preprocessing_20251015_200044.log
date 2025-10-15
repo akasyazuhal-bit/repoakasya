@@ -1,0 +1,56 @@
+2025-10-15 20:00:44,105 - BitcoinDataPreprocessing - INFO - ============================================================
+2025-10-15 20:00:44,105 - BitcoinDataPreprocessing - INFO - BITCOIN DATA PREPROCESSING PIPELINE
+2025-10-15 20:00:44,105 - BitcoinDataPreprocessing - INFO - ============================================================
+2025-10-15 20:00:44,105 - BitcoinDataPreprocessing - INFO - Giriş dosyası: data/raw/dataraw.csv
+2025-10-15 20:00:44,105 - BitcoinDataPreprocessing - INFO - Çıkış dosyası: data/processed/cleaned_data.csv
+2025-10-15 20:00:44,105 - BitcoinDataPreprocessing - INFO - Konfigürasyon: {
+  "log_level": "INFO",
+  "outlier_handling": {
+    "method": "cap",
+    "z_score_threshold": 3.0,
+    "iqr_multiplier": 1.5
+  },
+  "missing_value_imputation": {
+    "method": "forward_fill"
+  },
+  "data_smoothing": {
+    "method": "moving_average",
+    "window": 5
+  },
+  "scaling": {
+    "method": "robust"
+  },
+  "transformation": {
+    "method": "log"
+  },
+  "differencing": {
+    "order": 1
+  },
+  "technical_indicators": {
+    "windows": [
+      5,
+      10,
+      20
+    ]
+  },
+  "lag_features": {
+    "lags": [
+      1,
+      2,
+      3,
+      5,
+      10
+    ]
+  },
+  "validation": {
+    "max_missing_pct": 5.0,
+    "price_change_limit_pct": 20.0
+  },
+  "statistical_analysis": {
+    "normality_alpha": 0.05,
+    "stationarity_alpha": 0.05
+  }
+}
+2025-10-15 20:00:44,106 - BitcoinDataPreprocessing - INFO - ============================================================
+2025-10-15 20:00:44,106 - BitcoinDataPreprocessing - ERROR - Pipeline çalıştırma hatası: DataLoader.__init__() got an unexpected keyword argument 'log_level'
+2025-10-15 20:00:44,106 - BitcoinDataPreprocessing - ERROR - Pipeline başarısız!
