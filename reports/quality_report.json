@@ -1,0 +1,169 @@
+{
+  "timestamp": "2025-10-15T15:47:38.784422",
+  "data_path": "data/raw/dataraw.csv",
+  "basic_info": {
+    "shape": [
+      180,
+      6
+    ],
+    "columns": [
+      "timestamp",
+      "open",
+      "high",
+      "low",
+      "close",
+      "volume"
+    ],
+    "dtypes": {
+      "timestamp": "datetime64[ns]",
+      "open": "float64",
+      "high": "float64",
+      "low": "float64",
+      "close": "float64",
+      "volume": "float64"
+    },
+    "memory_usage": "8772",
+    "date_range": {
+      "start": "2024-01-01 00:00:00",
+      "end": "2024-06-28 00:00:00",
+      "days": 179
+    }
+  },
+  "duplicates": {
+    "total_duplicates": "0",
+    "timestamp_duplicates": "0",
+    "is_clean": "True"
+  },
+  "missing_values": {
+    "missing_counts": {
+      "timestamp": 0,
+      "open": 0,
+      "high": 0,
+      "low": 0,
+      "close": 0,
+      "volume": 0
+    },
+    "missing_percentages": {
+      "timestamp": 0.0,
+      "open": 0.0,
+      "high": 0.0,
+      "low": 0.0,
+      "close": 0.0,
+      "volume": 0.0
+    },
+    "total_missing": "0",
+    "max_missing_pct": 0.0,
+    "is_acceptable": "True"
+  },
+  "ohlc_consistency": {
+    "high_ge_low": "True",
+    "high_ge_open": "True",
+    "high_ge_close": "True",
+    "low_le_open": "True",
+    "low_le_close": "True",
+    "volume_positive": "True",
+    "price_positive": "True",
+    "is_consistent": true
+  },
+  "timestamp_continuity": {
+    "is_sorted": true,
+    "expected_days": 180,
+    "actual_days": 180,
+    "missing_dates": 0,
+    "extra_dates": 0,
+    "missing_dates_list": [],
+    "is_continuous": true
+  },
+  "outliers": {
+    "outlier_details": {
+      "open": {
+        "z_score_outliers": "0",
+        "iqr_outliers": "0",
+        "z_score_pct": 0.0,
+        "iqr_pct": 0.0
+      },
+      "high": {
+        "z_score_outliers": "0",
+        "iqr_outliers": "0",
+        "z_score_pct": 0.0,
+        "iqr_pct": 0.0
+      },
+      "low": {
+        "z_score_outliers": "0",
+        "iqr_outliers": "0",
+        "z_score_pct": 0.0,
+        "iqr_pct": 0.0
+      },
+      "close": {
+        "z_score_outliers": "0",
+        "iqr_outliers": "0",
+        "z_score_pct": 0.0,
+        "iqr_pct": 0.0
+      },
+      "volume": {
+        "z_score_outliers": "2",
+        "iqr_outliers": "5",
+        "z_score_pct": 1.1111111111111112,
+        "iqr_pct": 2.7777777777777777
+      }
+    },
+    "max_outlier_pct": 2.7777777777777777,
+    "is_acceptable": "True"
+  },
+  "statistics": {
+    "open": {
+      "mean": 59501.54033333333,
+      "median": 63781.7,
+      "std": 10345.527096802229,
+      "min": 39568.02,
+      "max": 73072.4,
+      "skewness": -0.6913938615650012,
+      "kurtosis": -1.0896169593320995
+    },
+    "high": {
+      "mean": 60753.2471111111,
+      "median": 64777.005000000005,
+      "std": 10532.207358070686,
+      "min": 40176.74,
+      "max": 73777.0,
+      "skewness": -0.723751037093573,
+      "kurtosis": -1.0575090777824765
+    },
+    "low": {
+      "mean": 58196.61938888888,
+      "median": 62197.0,
+      "std": 10031.805925863282,
+      "min": 38555.0,
+      "max": 71333.31,
+      "skewness": -0.6819292215731635,
+      "kurtosis": -1.0764019572232806
+    },
+    "close": {
+      "mean": 59602.34166666667,
+      "median": 63781.7,
+      "std": 10264.90805547839,
+      "min": 39568.02,
+      "max": 73072.41,
+      "skewness": -0.7109390941533561,
+      "kurtosis": -1.0450430607912544
+    },
+    "volume": {
+      "mean": 39615.79585328889,
+      "median": 33994.14776,
+      "std": 22208.91952459988,
+      "min": 7308.95542,
+      "max": 132696.7813,
+      "skewness": 1.2529610987930135,
+      "kurtosis": 1.988201264384661
+    }
+  },
+  "quality_score": 100.0,
+  "quality_checks": [
+    "True",
+    "True",
+    true,
+    true,
+    "True"
+  ],
+  "overall_status": "PASS"
+}
